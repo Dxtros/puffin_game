@@ -10,6 +10,7 @@ function _waterinit()
     secondary_freq = .02
     secondary_amp = 1.9
     waveoffset = .1
+    wave_points = {}
 end
 
 function _waterupdate()
@@ -18,7 +19,7 @@ function _waterupdate()
 end
 
 function _waterdraw()
-    local wave_points = {}
+    
     --store wave y-positions
 
     for x = 0, 127 do
@@ -28,9 +29,9 @@ function _waterdraw()
         local y = wave_h + main_wave + secondary_wave
         wave_points[x] = y
 
-        pset(x, y - 2, 7)
+        pset(x, y - 2, 12)
     end
-    for x = 0, 127 do
-        rectfill(x, wave_points[x] + 1, x, 127, 11)
-    end
+ for x = 0, 127 do
+    rectfill(x, wave_points[x] + 7, x, 127, 12)
+ end
 end

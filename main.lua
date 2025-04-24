@@ -4,30 +4,13 @@ function _init()
     _waterinit()
 
     _initAnim()
-
-    positionx = 0
-    idle_s = .3
-    speed = .8
+_init_player()
+    
 end
 
 function _update()
-    if btn(➡️) then
-        positionx += 1 * speed
-    end
+    _update_player()
 
-    if btn(⬅️) then
-        positionx -= 1 * speed
-    else
-        positionx += 1 * idle_s
-    end
-
-    if positionx >= 128 then
-        positionx = -13
-    else
-        if positionx <= -14 then
-            positionx = 128
-        end
-    end
     _spriteAnim()
 
     _waterupdate()
@@ -40,8 +23,7 @@ function _draw()
     pal(1, 0, 1)
     --color 1 is black
     pal(3, 1, 1)
-    cls(12)
+    cls(11)
     _waterdraw()
-    -- rectfill(0,0,128,45,1)
-    spr(sprite_num, positionx, 50, 2, 2)
+    _draw_player()
 end
