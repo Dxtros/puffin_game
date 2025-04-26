@@ -5,6 +5,9 @@ function _init()
 
     _initAnim()
 _init_player()
+_init_particles()
+init_zzz()
+fish_init()
     
 end
 
@@ -12,8 +15,12 @@ function _update()
     _update_player()
 
     _spriteAnim()
+    _sleepTimer()
 
     _waterupdate()
+    _update_particles()
+    update_zzz()
+    fish_update()
 end
 
 function _draw()
@@ -26,4 +33,7 @@ function _draw()
     cls(11)
     _waterdraw()
     _draw_player()
+    _draw_particles()
+    draw_zzz()
+    fish_draw()
 end

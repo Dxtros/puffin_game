@@ -29,7 +29,7 @@ function _waterdraw()
         local y = wave_h + main_wave + secondary_wave
         wave_points[x] = y
 
-        pset(x, y - 2, 12)
+        pset(x, y - 5, 12)
     end
  for x = 0, 127 do
     rectfill(x, wave_points[x] + 7, x, 127, 12)
